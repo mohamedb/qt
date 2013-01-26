@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # built application files
 *.apk
 *.ap_
@@ -18,3 +19,18 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+=======
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+>>>>>>> 959297e40c45a4b8e61afe348ebb60ca0f7ccad0
