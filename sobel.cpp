@@ -4,9 +4,9 @@
 Sobel::Sobel()
 {
    // this->contrast();
-    //this->run();
+    this->run();
     //this->myfilter();
-    this->play();
+    //this->play();
 }
 
 

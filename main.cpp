@@ -1,4 +1,4 @@
-#include <QtGui/QApplication>
+#include <QtGui/QApplication.h>
 #include "mainwindow.h"
 #include<QImage>
 #include<sobel.h>
