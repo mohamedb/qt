@@ -1,11 +1,10 @@
-<<<<<<< HEAD
-java
-====
+***********************************************************************
+Janvier 2013
 
-UnRep pour tester Git depuis Eclipse :D
-=======
-qt
-==
+Le but de ce petit projet est d'implementer le filtre de Sobel en 
+utilisant le framework QT v4.7+, en prmier temps le projet ne fait
+que Griser une image et le taçage des contours .
 
-qt test project
->>>>>>> 959297e40c45a4b8e61afe348ebb60ca0f7ccad0
+
+                                        Mohamed Boullouz
+*********************************************************************
