@@ -7,8 +7,7 @@
 
 int main(int argc, char *argv[])
 {
-    Sobel S;
-    S.toGray("nomFichier");
+
     QApplication a(argc, argv);
     MainWindow w;
     w.show();

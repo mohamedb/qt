@@ -5,6 +5,7 @@
 #include <QPen>
 #include <QPainter>
 
+
 Sobel::Sobel()
 {
     Gx = new double[9];
@@ -22,7 +23,13 @@ Sobel::Sobel()
 
 
 void Sobel::toGray(QString nomfichier){
-    nomfichier="C:\\Users\\Mohamed\\Desktop\\man\\cc.png";
+    try{
+    //nomfichier="C:\\Users\\Mohamed\\Desktop\\man\\gray.tif";
+
+
+    }
+    catch(...){}
+
     srcImg=QImage(nomfichier);
     srcImg=srcImg.convertToFormat(QImage::Format_ARGB32);
     srcWidth=srcImg.width();srcHeight=srcImg.height();
@@ -36,7 +43,7 @@ void Sobel::toGray(QString nomfichier){
         for(j=0;j<srcHeight;j++){
             pixel=srcImg.pixel(i,j);
             gray=(0.29*qRed(pixel)+0.58*qGreen(pixel)+0.12*qBlue(pixel));
-            grayImg.setPixel(i+1,j+1,qRgb(int(gray),int(gray),int(gray)));
+            grayImg.setPixel(i,j,qRgb(int(gray),int(gray),int(gray)));
         }//finFor j->srcHeight
     }//finFor i->srcWidth
     //-----------------fin Conversion en niveaux de Gris------------------
@@ -65,17 +72,29 @@ void Sobel::toEdge(){
                     value_gy+=Gy[p*3+k]*qRed(pixel);
                 }//fin For P->3
             }//fin For k->3
-            sobel_norm[i+j*srcWidth]=sqrt(value_gx*value_gx + value_gy*value_gy)/4.0;
+            sobel_norm[i+j*srcWidth]=sqrt(value_gx*value_gx + value_gy*value_gy)/1.0;
             max=sobel_norm[i+j*srcWidth]>max ? sobel_norm[i+j*srcWidth]:max;
         }//fin For j->srcHeight
     }//fin For i->srcWidth
-
+   int c = rand() % 255;         // v1 in the range 0 to 99
     //Enregistrement
     for(int i=0;i<srcWidth;i++){
         for(int j=0;j<srcHeight;j++){
-            my_color.setHsv( /*int(Sobel_angle[i + j * srcWidth])*/ 0  ,/*255*/ 0, int(255.0*sobel_norm[i + j * srcWidth]/max));
+            my_color.setHsv( 0  ,0, 255-int(255.0*sobel_norm[i + j * srcWidth]/max));
             edgeImg->setPixel(i,j,my_color.rgb());
         }//fin For j
     }//fin For i
     edgeImg->save("C:\\Users\\Mohamed\\Desktop\\man\\new.png",0,-1);
 }
+void Sobel::paintEvent(QPaintEvent * )
+{
+
+  QRectF target(0.0, 0.0, 990.0, 990.0);
+  QRectF source(00.0, 00.0, 990.0, 990.0);
+  QImage image("C:\\Users\\Mohamed\\Desktop\\man\\new.png");
+  QPainter painter(this);
+  painter.drawImage(target, image, source);
+
+}
+
+
