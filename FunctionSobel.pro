@@ -17,4 +17,5 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     sobel.h
 
-FORMS    += mainwindow.ui
+FORMS    += \
+    _mainwindow.ui

@@ -14,45 +14,31 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="gridLayoutWidget">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>381</width>
-      <height>191</height>
+      <x>180</x>
+      <y>20</y>
+      <width>121</width>
+      <height>23</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <property name="leftMargin">
-      <number>5</number>
-     </property>
-     <item row="1" column="0">
-      <widget class="QPushButton" name="gris">
-       <property name="text">
-        <string>toEdge</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>Open</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <property name="text">
+     <string>Open</string>
+    </property>
    </widget>
-   <widget class="QWidget" name="gridLayoutWidget_2">
+   <widget class="QPushButton" name="gris">
     <property name="geometry">
      <rect>
-      <x>389</x>
-      <y>10</y>
-      <width>241</width>
-      <height>181</height>
+      <x>80</x>
+      <y>20</y>
+      <width>81</width>
+      <height>23</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout_2"/>
+    <property name="text">
+     <string>toEdge</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

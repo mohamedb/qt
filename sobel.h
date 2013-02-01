@@ -6,14 +6,14 @@
 class Sobel : public QWidget
 {
 public :
-    int srcHeight;int srcWidth;
-    QImage srcImg;QImage grayImg;QImage *edgeImg;
+    int source_height;int source_width;
+    QImage source_image;QImage gray_image;QImage *edge_image;
     double *Gx,*Gy;
     Sobel();
 protected:
     void paintEvent(QPaintEvent *);
 public slots:
-    void toGray(QString nomficher );
+    void toGray(QString file_name );
     void toEdge();
 
 };
