@@ -16,9 +16,9 @@ Sobel::Sobel()
     Gx[3] = 2.0; Gx[4] = 0.0; Gx[5] = -2.0;
     Gx[6] = 1.0; Gx[7] = 0.0; Gx[8] = -1.0;
 
-    Gy[0] =  -1.0; Gy[1] =  -2.0; Gy[2] = - 1.0;
-    Gy[3] =   0.0; Gy[4] =   0.0; Gy[5] =   0.0;
-    Gy[6] =   1.0; Gy[7] =   2.0; Gy[8] =   1.0;
+    Gy[0] = -1.0; Gy[1] = -2.0; Gy[2] = - 1.0;
+    Gy[3] = 0.0; Gy[4] = 0.0; Gy[5] = 0.0;
+    Gy[6] = 1.0; Gy[7] = 2.0; Gy[8] = 1.0;
 }
 
 
@@ -76,11 +76,11 @@ void Sobel::toEdge(){
             max=sobel_norm[i+j*source_width]>max ? sobel_norm[i+j*source_width]:max;
         }//fin For j->source_height
     }//fin For i->source_width
-   int c = rand() % 255;         // v1 in the range 0 to 99
+   int c = rand() % 255; // v1 in the range 0 to 99
     //Enregistrement
     for(int i=0;i<source_width;i++){
         for(int j=0;j<source_height;j++){
-            my_color.setHsv( 0  ,0, 255-int(255.0*sobel_norm[i + j * source_width]/max));
+            my_color.setHsv( 0 ,0, 255-int(255.0*sobel_norm[i + j * source_width]/max));
             edge_image->setPixel(i,j,my_color.rgb());
         }//fin For j
     }//fin For i
@@ -96,5 +96,4 @@ void Sobel::paintEvent(QPaintEvent * )
   painter.drawImage(target, image_to_print, source);
 
 }
-
 

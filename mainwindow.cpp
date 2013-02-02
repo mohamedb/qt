@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
      QVBoxLayout *buttonGroupLayout = new QVBoxLayout(buttonGroup);
 
-     // Add the buttons to start/stop the animation when in "Animation mode"
+     //
      ui->pushButton = new QPushButton(tr("Parcourir"),buttonGroup);
      buttonGroupLayout->addWidget(ui->pushButton);
      ui->gris = new QPushButton(tr("Gris"),buttonGroup);
@@ -37,6 +37,7 @@ MainWindow::MainWindow(QWidget *parent) :
      //*******************************************************
      connect(ui->pushButton,SIGNAL(pressed()),this,SLOT(open(void)));
      connect(ui->gris,SIGNAL(pressed()),this,SLOT(toGris()));
+     connect(ui->gris,SIGNAL(pressed()),this,SLOT(update()));
 
 }
 QString MainWindow::open(){
